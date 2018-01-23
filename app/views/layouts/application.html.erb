@@ -12,9 +12,10 @@
             <nav>
               <!-- deviseで使われるヘルパーメソッドでuser_signed_in?はログインしているかどうか -->
                 <% if user_signed_in? %>
-                <strong><%= link_to current_user.email, users_show_path %></strong>
+                <strong><%= link_to current_user.name, users_show_path %></strong>
                 <%= link_to 'プロフィール変更', edit_user_registration_path %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+                <%= link_to 'Twitter認証', '/auth/twitter' %>
                 
             <% else %>
                 <%= link_to 'サインアップ', new_user_registration_path %>
