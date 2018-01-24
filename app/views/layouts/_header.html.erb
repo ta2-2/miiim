@@ -1,0 +1,53 @@
+<header>
+    <div class="topTitle">
+        <% if @current_user %>
+            <%= link_to("miiim", "/posts/index") %>
+            <% else%>
+            <%= link_to("miiim", "/") %>
+            <% end %>
+        </div>
+    <ul class="header-menus">
+        
+        
+        
+        <% if @current_user %>
+        <li>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+        </li>
+        
+        <li>
+            <%= link_to("ログアウト", "/logout") %>
+        </li>
+        <li>
+            <%= link_to("ユーザー一覧", "/users/index") %>
+        </li>
+        <li>
+            <%= link_to("新規投稿", "/posts/new") %>
+        </li>
+        <li>
+            <%= link_to("投稿一覧", "/posts/index") %>
+        </li>
+        <li>
+            <%= link_to("検索", "/tweets/top") %>
+        </li>
+        <li>
+            <%= link_to 'Twitterでログイン', '/auth/twitter' %>
+        </li>
+        <% else %>
+        <li>
+            <%= link_to("ログイン", "/login") %>
+        </li>
+        <li>
+            <%= link_to("新規登録", "/users/new") %>
+        </li>
+          <li>
+            <%= link_to("新規投稿", "/posts/new") %>
+        </li>
+        <li>
+            <%= link_to("投稿一覧", "/posts/index") %>
+        </li>
+        
+         <% end %>
+    </ul>
+</header>
+        
