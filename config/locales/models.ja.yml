@@ -7,3 +7,4 @@ ja:
         password_confirmation: 確認用パスワード
         remember_me: 次回から自動的にログイン
         name: 名前
+        current_password: 現在のパスワード
