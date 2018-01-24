@@ -8,9 +8,42 @@
               <%= message %>
             </div>
           <% end %>
+          <select name="category">
+            <option value="" style="display: none;">選択してください</option>
+            <option value="technology">テクノロジー</option>
+            <option value="mobile">モバイル</option>
+            <option value="apps">アプリ</option>
+            <option value="entertainment">エンタメ</option>
+            <option value="beauty">ビューティー</option>
+            <option value="fashion">ファッション</option>
+            <option value="lifestyle">ライフスタイル</option>
+            <option value="business">ビジネス</option>
+            <option value="web">ウェブ</option>
+            <option value="gourmet">グルメ</option>
+            <option value="event">イベント</option>
+          </select>
           
-          <textarea name="content"><%= @post.content %></textarea>
-          <input type="submit" value="投稿">
+          <div style="editorwrapper">
+            <div class="editor">
+                <p class="p_Editor">Editor</p>
+                
+                    <p>ページタイトル(ファイル名にも適用されます)</p>
+                    <textarea id="liveeditor-title" type="text" name="title" value="index"><%= @post.title %></textarea><br>
+
+                    <p>ページの内容(htmlタグが使えます)</p>
+                    <textarea id="liveeditor" name="content" rows="10" cols="80"><%= @post.content %></textarea>
+            </div>
+
+            <div class="preview">
+              
+                <p class="p_preview">Preview</p>
+                <div id="livepreview-title"></div>
+                <div id="livepreview"></div>
+            </div>
+            <div class="clear"></div>
+          <input type="submit"  name="content_submit" value="投稿" class="content_submit">
+          <input type="submit" name="save_submit" value="保存" class="save_submit">
+
         </div>
       </div>
     <% end %>

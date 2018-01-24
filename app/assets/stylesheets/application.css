@@ -279,7 +279,7 @@ users/showに関する記述
 
 
 .form {
-  width: 1000px;
+  width: 95%px;
   box-shadow: 0 2px 6px #c1ced7;
   display: inline-block;
   margin-bottom:30px;
@@ -439,4 +439,38 @@ TimeLine
 .textLeft{
   text-align:left!important; 
   background-color: #eee;
+  
+}
+
+
+.editor{
+    float: left;
+    width: 45%;
+    height: 80%;
+
+}
+
+.preview{
+    float: right;
+    width: 45%;
+    height: 80%;
+    background-color: #DDDDDD;
+
+}
+
+.p_Editor{
+    background-color:#eee;
+    color:black;
+}
+.p_preview{
+    
+    color:black;
+}
+.content_submit{
+    width: 200px;
+    float: left ;
+    margin-bottom: 30px
+}
+.clear{
+    clear:both;
 }

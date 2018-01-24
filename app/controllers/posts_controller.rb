@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
       @posts = Post.all.order(created_at: :desc)
+      
+    
   end
   
   def new
@@ -8,15 +10,32 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(
-      content: params[:content])
-    if @post.save
-      flash[:notice] = "投稿を作成しました"
-      
-      redirect_to("/posts/index")
-       else
-      render("posts/new")
-    end
+      #保存ボタン押した時の動き
+
+      @post = Post.new(
+        #if @current_user 
+        #  user_id: @current_user
+        #end
+        category: params[:category],
+        title: params[:title],
+        content: params[:content],
+        )
+        if params[:content_submit] 
+          @post.post_on = true
+          @post.save
+          flash[:notice] = "投稿しました"
+        redirect_to("/posts/index")
+        
+        else
+        
+        @post.save
+        flash[:notice] = "投稿を保存しました"
+          
+        render("/posts/new")
+
+          
+        end
+    
   end
   
   
