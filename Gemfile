@@ -39,6 +39,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 <<<<<<< HEAD
 =======
 gem 'dotenv-rails'
+gem 'devise'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 >>>>>>> origin/master
 group :development, :test do
