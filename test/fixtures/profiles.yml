@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  image_name: MyString
+  area: MyString
+  gender: 1
+  interests: 1
+
+two:
+  content: MyText
+  image_name: MyString
+  area: MyString
+  gender: 1
+  interests: 1
