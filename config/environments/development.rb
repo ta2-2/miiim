@@ -40,7 +40,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   # mailer setting
-  config.action_mailer.default_url_options = {  host: 'https://miiim-ta2aikawa.c9users.io', port: 8080}
+  config.action_mailer.default_url_options = {  host: 'https://miiim-shu215.c9users.io', port: 8080}
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

@@ -10,21 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20180123090917) do
-
-  create_table "share_users", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "nickname"
-    t.string   "image_url"
-    t.integer  "user_id"
-    t.string   "token"
-    t.string   "secret"
-  end
-end
-
-ActiveRecord::Schema.define(version: 20180124052423) do
+ActiveRecord::Schema.define(version: 20180124105202) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -36,6 +22,17 @@ ActiveRecord::Schema.define(version: 20180124052423) do
     t.boolean  "post_on",    default: false, null: false
   end
 
+  create_table "share_users", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "nickname"
+    t.string   "image_url"
+    t.integer  "user_id"
+    t.string   "token"
+    t.string   "secret"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -62,4 +59,4 @@ ActiveRecord::Schema.define(version: 20180124052423) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-end 
+end

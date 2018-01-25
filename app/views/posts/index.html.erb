@@ -9,6 +9,7 @@
     <% if post.post_on == true%>
       <div class="posts-index-item">
           <%= link_to(post.content, "/posts/#{post.id}") %>
+          </div>
       <% end %>
 <%
 =begin
@@ -26,7 +27,7 @@
         <%
 =end
 %>
-      </div>
+      
     <% end %>
   </div>
 </div>
