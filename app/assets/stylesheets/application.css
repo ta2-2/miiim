@@ -1,15 +1,479 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+*= require froala_editor.min.css
+*= require froala_style.min.css
+
+*/
+
+
+/**********************
+
+全体に関する記述
+
+***********************/
+
+
+*{
+  padding:0;
+  margin:0;
+}
+
+html {
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+header {
+  position: relative;
+  height: 64px;
+  z-index: 1;
+  width: 100%;
+  background-color: #eee
+}
+body{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    min-height: 100%;
+}
+
+.container{
+  height: auto;
+  min-height: 550px;
+}
+
+
+
+
+.footer{
+    width:100%;
+    position:absolute;
+}
+
+.footer-container{
+    position:relative;
+    height:120px; 
+    background-color: #eee;
+    padding-top:55px;
+    
+}
+
+.footer-container p{
+    text-align: center;
+}
+
+
+
+
+.main{
+  text-align: center;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+}
+
+.align-left{
+  text-align: left;
+}
+
+
+.userIndex {
+     padding:10px 0;
+     border:solid 1px #eee;
+
+}
+
+
+
+
+/* aタグに関する記述----------*/
+
+
+a{
+  text-decoration: none;
+}
+a:link{
+  color:#3399cc;
+}
+
+a:visited {
+  color: #000080;
+}
+  
+a:hover {
+  color: #ff0000; 
+}
+
+a:active { 
+  color: #ff8000; 
+
+}
+
+/*aタグここまで------------*/
+
+
+/******************************
+
+ヘッダーメニューに関する記述
+
+*******************************/
+
+ul {
+  list-style-type: none;
+}
+
+.topTitle{
+  padding: 10px 20px;
+  float:left;
+  font-size:20px;
+  font-weight:700;
+}
+
+.header-menus {
+  float: right;
+  padding-right: 20px;
+}
+
+.header-menus li {
+  float: left;
+  line-height: 64px;
+  font-size: 13px;
+  padding-left: 15px;
+}
+
+.header-menus a {
+  float: left;
+  font-size: 13px;
+  color: navy;
+}
+
+
+
+/* inputやpタグなどに関する記述 ------------- */
+
+h1, h2, h3, h4, h5{
+    margin:20px;
+}
+
+p , input {
+    margin-left:20px;
+    
+}
+.form-content input{
+  width:200px;
+}
+input[type="submit"]{
+  /*width: 100px;*/
+  border: 1px solid #d8dadf;
+  padding: 10px;
+  color: #57575f;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 2px;
+}
+
+/* inputやpタグなどに関する記述ここまで ------------- */
+
+
+
+.flash{
+  width:100%;
+  padding:10px 40px;
+  margin: -28px 0 20px 0;
+  background-color:#cce1ff;
+
+}
+
+
+
+
+/*全体ここまで------------*/
+
+
+
+/**********************
+
+users/showに関する記述
+
+***********************/
+
+
+.main-mypage {
+  width: 500px;
+  padding: 30px;
+  border : solid 1px #eee;
+  display: inline-block;
+  text-align: center;
+}
+
+.form-content{
+  width:500px;
+  padding:50px 30px;
+  border:solid 1px #eee;
+  text-align: center;
+  display: inline-block;
+}
+
+.index-content{
+  padding:30px 0; 
+  width:500px;
+  text-align: center;
+  display: inline-block;
+}
+
+
+.buttom-container{
+  font-size:14px;
+  margin-bottom: 30px;
+  text-align: right;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+
+.form-error {
+  
+}
+
+.form-error p{
+  font-color:red;
+}
+
+
+
+/**********************
+
+/topに関する記述
+
+***********************/
+
+
+.top-main {
+  padding: 100px 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 450px;
+  color: white;
+  background-color: #ffcc00;
+  background-position: center 50%;
+  background-size: cover;
+}
+
+
+
+
+
+
+/************************************
+************************************
+************************************
+
+ここから下がPOSTSに関わる記述
+
+************************************
+************************************
+************************************/
+
+.title-textarea{
+  height: 1em ;
+}
+
+
+.form {
+  width: 95%px;
+  box-shadow: 0 2px 6px #c1ced7;
+  display: inline-block;
+  margin-bottom:30px;
+
+}
+
+.form-body {
+  padding: 30px;
+}
+
+.form textarea {
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+
+.textarea-title  {
+  height: 35px;
+  font-size:40px;
+}
+
+ .textarea-content  {
+  height: 120px;
+}
+
+
+
+/* posts/index ---------------- */
+
+.posts-index-item {
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+/* posts/index cardにする ---------------- */
+
+.card {
+  margin: 15px 25px;
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  display: inline-block;
+  vertical-align: top;    /* 上端を揃える */
+  text-align: center;
+
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+.card-text {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden;
+  height: auto;
+  max-height: 80px;
+  
+}
+
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.card-link a:hover {
+  color: #0090aa;
+}
+
+/* cardここまで ---------------- */
+
+
+
+/* posts/show ---------------- */
+
+.posts-show-item {
+  padding: 30px;
+  margin:0 auto;
+  width:65%;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  overflow: hidden;
+}
+
+.post-time {
+  color: #8899a6;
+  margin-bottom: 10px;
+}
+
+
+.like-btn-unlike {
+    color: #ff2581;
+}
+
+.non-space{
+  padding:0;
+}
+
+
+/**************************
+
+TimeLine
+
+***************************/
+
+/*timeline*/
+
+.post-panel {
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 20px;
+}
+.post {
+  padding-left: 65px;
+
+}
+.tweet-image{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  float: left;
+  
+}
+.tweet-image img {
+    border-radius: 50%;
+    border: 5px solid #fff;
+  }
+
+
+.post-image img {
+    max-height: 250px;
+    max-width: 300px;
+  }
+
+.login-section{
+  float: right;
+  margin-right: 15px;
+}
+
+.textLeft{
+  text-align:left!important; 
+  background-color: #eee;
+  
+}
+
+
+.editor{
+    float: left;
+    width: 45%;
+    height: 80%;
+
+}
+
+.preview{
+    float: right;
+    width: 45%;
+    height: 80%;
+    background-color: #DDDDDD;
+
+}
+
+.p_Editor{
+    background-color:#eee;
+    color:black;
+}
+.p_preview{
+    
+    color:black;
+}
+.content_submit{
+    width: 200px;
+    float: left ;
+    margin-bottom: 30px
+}
+.clear{
+    clear:both;
+}

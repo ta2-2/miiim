@@ -3,8 +3,14 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   
-  get "auth/:provider/callback" => "share_users#new"
+  get 'posts/index' => "posts#index"
+  get "posts/new" => "posts#new"
+  post "posts/create" => "posts#create"
+  get "posts/:id" => "posts#show"
   
+  
+  
+<<<<<<< HEAD
   get "users/:id" => "users#show"
 
   get 'share_users/new'
@@ -66,4 +72,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+=======
+>>>>>>> de844b7a9c0edaa61b509118a74cc94383322f69
 end

@@ -1,0 +1,32 @@
+<h2>投稿一覧</h2>
+
+<h3>【最新の投稿】</h3>
+
+<div class="main posts-index">
+  <div class="container">
+    
+    <% @posts.each do |post| %>
+    <% if post.post_on == true%>
+      <div class="posts-index-item">
+          <%= link_to(post.content, "/posts/#{post.id}") %>
+      <% end %>
+<%
+=begin
+%>
+
+<div class="post-left">
+<img src="<%= "/user_images/#{post.user.image_name}" %>"> 
+        </div>
+
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to( post.user.name, "/users/#{post.user.id}" ) %>
+          </div>
+        </div>
+        <%
+=end
+%>
+      </div>
+    <% end %>
+  </div>
+</div>

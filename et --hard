@@ -1,0 +1,114 @@
+[33mcommit 806012b96bcf41d1199916b8f450668530653366[m[33m ([m[1;36mHEAD -> [m[1;32mshu-works[m[33m)[m
+Merge: fe8ba12 f1883f9
+Author: shuhey <oj9.nigo@gmail.com>
+Date:   Thu Jan 25 03:25:11 2018 +0000
+
+    コンフリクト解消
+
+[33mcommit fe8ba1218fd4a25547f00f7e6bfa5c30ab9e0b83[m[33m ([m[1;31morigin/shu-works[m[33m)[m
+Author: shuhey <oj9.nigo@gmail.com>
+Date:   Thu Jan 25 03:06:50 2018 +0000
+
+    wyswyg機能挑戦（導入できず）
+
+[33mcommit 538273b27e5f5d7d4b5bfb86b5e70ab970ab95e1[m
+Author: shuhey <oj9.nigo@gmail.com>
+Date:   Wed Jan 24 11:57:29 2018 +0000
+
+    投稿一時保存機能＆リアルタイムプレビュー機能
+
+[33mcommit f1883f95ad9634a6e251b8e9d72dac052ad4ec54[m
+Merge: c24182d ae234d0
+Author: ta2-a <32451576+ta2-a@users.noreply.github.com>
+Date:   Wed Jan 24 17:59:14 2018 +0900
+
+    Merge pull request #1 from ta2-2/users
+    
+    Users
+
+[33mcommit ae234d098ac3f00d685eac678852d7ca0e519f32[m
+Merge: 116e9fb c24182d
+Author: ta2-a <32451576+ta2-a@users.noreply.github.com>
+Date:   Wed Jan 24 17:59:01 2018 +0900
+
+    Merge branch 'master' into users
+
+[33mcommit 116e9fb87a9ee894812c0ccb729d0e8578cc8783[m
+Author: TatsuhiroAikawa <tacho119@gmail.com>
+Date:   Wed Jan 24 08:49:17 2018 +0000
+
+    マイページ作成
+
+[33mcommit 1087041703a4dda18fe5da4f96d182cecb6afba2[m
+Author: shuhey <oj9.nigo@gmail.com>
+Date:   Wed Jan 24 08:19:09 2018 +0000
+
+    header&footer仮挿入＋CSS装飾
+
+[33mcommit 4e6713f91cca488cb49ba88e0ecb976348287676[m
+Author: shuhey <oj9.nigo@gmail.com>
+Date:   Wed Jan 24 07:31:47 2018 +0000
+
+    gemfileコンフリクト解消
+
+[33mcommit c24182dd35ba59409a3802fa726f5b3bb0bcfa2e[m
+Merge: 7b5bfd1 7731a0a
+Author: shuhey <oj9.nigo@gmail.com>
+Date:   Wed Jan 24 06:54:45 2018 +0000
+
+    Merge branch 'master' into shu-works
+
+[33mcommit 7b5bfd17b80dd3df635036b1c15c9113de151c8e[m
+Author: shuhey <oj9.nigo@gmail.com>
+Date:   Wed Jan 24 06:54:09 2018 +0000
+
+    first commit
+
+[33mcommit 3939bc1b321a913dd69efdd0b3a2fa8094496640[m
+Author: TatsuhiroAikawa <tacho119@gmail.com>
+Date:   Wed Jan 24 01:51:42 2018 +0000
+
+    日本語化
+
+[33mcommit a60995ad2708d09120ce6926f624dacaa8af1f6c[m[33m ([m[1;31morigin/users[m[33m)[m
+Author: TatsuhiroAikawa <tacho119@gmail.com>
+Date:   Tue Jan 23 11:06:47 2018 +0000
+
+    user認証
+
+[33mcommit 7731a0a4de560ee7d958da97e91d054db669d821[m
+Merge: 6dfa60b 58ec6bd
+Author: shuhey <oj9.nigo@gmail.com>
+Date:   Tue Jan 23 09:38:47 2018 +0000
+
+    test commit
+
+[33mcommit 6dfa60bbac1bad6cbb6c3c559c7c72bd21410655[m
+Author: shuhey <oj9.nigo@gmail.com>
+Date:   Tue Jan 23 09:18:53 2018 +0000
+
+    first commit
+
+[33mcommit be70ac214287a17fe36548f5077d5820bb39d3e1[m
+Author: TatsuhiroAikawa <tacho119@gmail.com>
+Date:   Tue Jan 23 06:52:04 2018 +0000
+
+    users_signup
+
+[33mcommit 44ae08a9bec61907a4ff4bd96f94bd0bfd230ab9[m
+Author: TatsuhiroAikawa <tacho119@gmail.com>
+Date:   Mon Jan 22 09:56:43 2018 +0000
+
+    users signup
+
+[33mcommit 58ec6bdc1bc48293daebfbc90af22f680a01f63f[m
+Author: TatsuhiroAikawa <tacho119@gmail.com>
+Date:   Mon Jan 22 08:01:54 2018 +0000
+
+    dotenv
+
+[33mcommit 95b3d7515cb4fef97fda089a963cda42f7eef935[m
+Author: TatsuhiroAikawa <tacho119@gmail.com>
+Date:   Mon Jan 22 07:18:24 2018 +0000
+
+    first commit

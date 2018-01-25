@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>miiim</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
+  <head>
+    <title>miiim</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag(:all) %>
+    <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
-</head>
 
-<body>
-  <header>
-            <nav>
-              <!-- deviseで使われるヘルパーメソッドでuser_signed_in?はログインしているかどうか -->
-                <% if user_signed_in? %>
-                <strong><%= link_to current_user.name, "/users/#{current_user.id}" %></strong>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-                
-            <% else %>
-                <%= link_to 'サインアップ', new_user_registration_path %>
-                <%= link_to 'ログイン', new_user_session_path %>
-                <% end %>
-            </nav>
-  </header>
-  
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  
-<%= yield %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- テキストエリアの入力をリアルタイムプレビューするためのjquery-->
+    <script>
+        $(function() {
+            $('body').keyup(function() {
+                $('#livepreview').html($('#liveeditor').val());
+                 $('#livepreview-title').html($('#liveeditor-title').val());
 
-</body>
+            });
+        });
+        
+        
+        $(function() {
+        $('#liveeditor').froalaEditor();
+        });
+
+    </script>
+
+  </head>
+  
+  <body>
+    <%= render 'layouts/header'%>
+      <div class="container">
+
+          <!--
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          -->
+
+          
+     　<% if flash[:notice] %>
+       <div class="flash">
+         <%= flash[:notice] %>
+       </div>
+     <% end %>
+      <div class="main">
+     <%= yield %>
+      </div>
+    </div>
+        <%= render "layouts/footer" %>
+  </body>
 </html>
