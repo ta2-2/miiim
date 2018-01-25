@@ -8,12 +8,14 @@
         </div>
     <ul class="header-menus">
         
-         <% if user_signed_in? %>
-        <li>
-        <strong><%= link_to current_user.name, "/users/#{current_user.id}" %></strong>
+
+          <!-- deviseで使われるヘルパーメソッドでuser_signed_in?はログインしているかどうか -->
+        <% if user_signed_in? %>
+        <li>      
+                <strong><%= link_to current_user.name, "/users/#{current_user.id}" %></strong>
         </li>
-        <li>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        <li>        
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         </li>
         <li>
             <%= link_to("ユーザー一覧", "/users/index") %>
@@ -30,6 +32,7 @@
         <li>
             <%= link_to 'Twitterでログイン', '/auth/twitter' %>
         </li>
+
         <% else %>
         <li>
             <%= link_to 'ログイン', new_user_session_path %>
@@ -37,7 +40,6 @@
         <li>
             <%= link_to 'サインアップ', new_user_registration_path %>
         </li>
-          
          <% end %>
     </ul>
 </header>
