@@ -27,10 +27,10 @@
             <div class="editor">
                 <p class="p_Editor">Editor</p>
                 
-                    <p>ページタイトル(ファイル名にも適用されます)</p>
+                    <p>ページタイトル</p>
                     <textarea id="liveeditor-title" type="text" name="title" value="index"><%= @post.title %></textarea><br>
 
-                    <p>ページの内容(htmlタグが使えます)</p>
+                    <p>ページの内容</p>
                     <textarea id="liveeditor" name="content" rows="10" cols="80"><%= @post.content %></textarea>
             </div>
 
@@ -40,6 +40,7 @@
                 <div id="livepreview-title"></div>
                 <div id="livepreview"></div>
             </div>
+
             <div class="clear"></div>
           <input type="submit"  name="content_submit" value="投稿" class="content_submit">
           <input type="submit" name="save_submit" value="保存" class="save_submit">
