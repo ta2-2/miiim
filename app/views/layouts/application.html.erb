@@ -3,8 +3,10 @@
   <head>
     <title>miiim</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag(:all) %>
+    <%= csrf_meta_tags %>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -31,6 +33,13 @@
   <body>
     <%= render 'layouts/header'%>
       <div class="container">
+
+<!--
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+-->  
+
+          
      　<% if flash[:notice] %>
        <div class="flash">
          <%= flash[:notice] %>

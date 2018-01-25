@@ -33,7 +33,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'dotenv-rails'
+<<<<<<< HEAD
 gem 'wysiwyg-rails'
+=======
+gem 'devise'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+>>>>>>> f1883f95ad9634a6e251b8e9d72dac052ad4ec54
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
