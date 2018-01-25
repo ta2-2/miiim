@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>miiim</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
+<body>
+  <header>
+            <nav>
+              <!-- deviseで使われるヘルパーメソッドでuser_signed_in?はログインしているかどうか -->
+                <% if user_signed_in? %>
+                <strong><%= link_to current_user.name, "/users/#{current_user.id}" %></strong>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+                
+            <% else %>
+                <%= link_to 'サインアップ', new_user_registration_path %>
+                <%= link_to 'ログイン', new_user_session_path %>
+                <% end %>
+            </nav>
+  </header>
+  
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
 <%= yield %>
 
 </body>

@@ -1,0 +1,17 @@
+<h2>マイページ</h2>
+<p>（画像）編集 / 削除</p>
+
+<p>名前: <%= current_user.name %></p>
+<p>プロフィール</p>
+<p>属性:</p>
+<p>WEBサイト:</p>
+
+<p>デポジット残高</p>
+<p>応援チャージしたコンテンツ一覧</p>
+<p>投稿したコンテンツ一覧</p>
+<p>拡散したコンテンツ一覧</p>
+
+
+<p>プロフィールを編集ボタン</p>
+<%= link_to 'アドレス・パスワード変更', edit_user_registration_path %><br>
+<%= link_to 'Twitter認証', '/auth/twitter' %>
