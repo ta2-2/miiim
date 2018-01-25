@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   get 'share_users/new'
   
-  get "profiles/:id/edit" => "profiles#edit"
-  
+  resources :profiles
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124105500) do
+ActiveRecord::Schema.define(version: 20180125015357) do
 
   create_table "profiles", force: :cascade do |t|
     t.text     "content"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20180124105500) do
     t.integer  "interests",  default: 0, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "level",      default: 0
   end
 
   create_table "share_users", force: :cascade do |t|

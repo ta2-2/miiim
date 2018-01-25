@@ -1,1 +1,17 @@
 <h2>プロフィール編集</h2>
+
+<%= form_tag("/profiles/#{@profile.id}/update") do%>
+    <div class="form-content">
+      <div class="align-left">
+      <p>プロフィール</p>
+      <input name="content" value="<%= @profile.content %>">
+      <p>性別</p>
+      <input name="email" value="<%= @prifile.genger %>">
+      <p>地域</p>
+      <input name="email" value="<%= @prifile.area %>">
+      <p>興味のあるカテゴリー</p>
+      <input name="email" value="<%= @prifile.interests %>">
+      <input type="submit" value="編集" >
+      </div>
+    </div>
+<% end %>

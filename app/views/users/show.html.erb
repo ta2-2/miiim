@@ -14,6 +14,7 @@
 <p>拡散したコンテンツ一覧</p>
 
 
+<%= link_to "プロフィールを作成", "/profiles/new" %><br>
 <%= link_to "プロフィールを編集", "/profiles/#{@user.id}/edit" %><br>
 <%= link_to 'アドレス・パスワード変更', edit_user_registration_path %><br>
 <%= link_to 'Twitter認証', '/auth/twitter' %>
