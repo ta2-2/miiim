@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  
   root 'home#index'
   
   get 'posts/index' => "posts#index"
@@ -8,9 +12,6 @@ Rails.application.routes.draw do
   post "posts/create" => "posts#create"
   get "posts/:id" => "posts#show"
   
-  
-  
-<<<<<<< HEAD
   get "users/:id" => "users#show"
 
   get 'share_users/new'
@@ -72,6 +73,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-=======
->>>>>>> de844b7a9c0edaa61b509118a74cc94383322f69
+
 end

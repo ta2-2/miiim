@@ -1,19 +1,17 @@
 class ProfilesController < ApplicationController
-  
+
   def new
     @profile = Profile.new
   end
   
   def create
-    @profile = Profile.new(
-      name: params[:name],
-      email: params[:email],
-      password: params[:password]
-      )
+    
+    @profile = Profile.new(profile_params)
+    
       
     if @profile.save
       flash[:notice] = "登録が完了しました"
-      redirect_to("/users/#{@user.id}")
+      redirect_to("/users/#{@profile.id}")
       
     else
       render("profiles/new")
@@ -22,25 +20,19 @@ class ProfilesController < ApplicationController
   end
   
   def edit
-    @current_user = current_user
     @profile = Profile.find_by(id: params[:id])
-    
-    if @profile == nil
-      @profile = Profile.new
-    end
-    
   end
   
   def update
+    
     @profile = Profile.find_by(id: params[:id])
-    @profile.name = params[:name]
-    @profile.email = params[:email]
-    if @profile.save
-      flash[:notice] = "ユーザー情報を編集しました"
-      redirect_to("/users/#{@user.id}")
-    else
-      render("users/edit")
-    end
+      if @profile.update(profile_params)
+ 
+        flash[:notice] = "ユーザー情報を編集しました"
+        redirect_to("/users/#{@profile.id}")
+      else
+        render("profiles/#{@profile.id}/edit")
+      end
   end
   
   def destroy
@@ -49,5 +41,13 @@ class ProfilesController < ApplicationController
     flash[:notice] = "ユーザーアカウントを削除しました"
     redirect_to("/")
   end
+
+
+ private
+ 
+ def profile_params
+   params.require(:profile).permit(:content, :image_name, :area, :gender, :interests, :level, :birth_date, :job)
+ end
+ 
 
 end
