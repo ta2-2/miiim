@@ -36,8 +36,8 @@ class ProfilesController < ApplicationController
   end
   
   def destroy
-    @user = User.find_by(id: params[:id])
-    @user.destroy
+    @profile = Profile.find_by(id: params[:id])
+    @profile.destroy
     flash[:notice] = "ユーザーアカウントを削除しました"
     redirect_to("/")
   end

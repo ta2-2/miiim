@@ -1,15 +1,14 @@
 <%= form_for(profile) do |f| %>
 
-<p>プロフィール</p>
-<%= f.label :content %><br>
+<%= f.label :content,'プロフィール' %><br>
 <%= f.text_area :content, cols: 80, rows: 10%><br>
 
-<%= f.label :gender %><br>
+<%= f.label :gender, '性別' %><br>
 <label><%= f.radio_button :gender, 'unknown' %> 不明 </label>
 <label><%= f.radio_button :gender, 'male' %> 男 </label>
 <label><%= f.radio_button :gender, 'female' %> 女 </label><br><br>
 
-<%= f.label :area %><br>
+<%= f.label :area, '地域' %><br>
 <%= f.select :area, [
 '北海道', 
 '青森県', '岩手県', '宮城県', '秋田県', '山形県', '福島県',
@@ -23,17 +22,17 @@
 ], 
 { include_blank: '選択して下しさい'} %><br><br>
 
-<%= f.label :interests %><br>
+<%= f.label :interests, '興味関心' %><br>
 <%= f.select :interests, [
 '音楽', 'スポーツ', 'グルメ', 'エンタメ', '旅行', 'ビジネス'],
 { include_blank: '選択して下しさい'} %><br><br>
 
-<%= f.label :job %><br>
+<%= f.label :job, '職業' %><br>
 <%= f.select :job, [
 '医療', '情報通信', '芸能', '飲食', '建築', '金融・会計'],
 { include_blank: '選択して下しさい'} %><br><br>
 
-<%= f.label :birth_date %>
+<%= f.label :birth_date, '生年月日' %>
 <%= f.date_field :birth_date %><br><br>
 
 <%= f.submit %>
