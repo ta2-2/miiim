@@ -41,7 +41,7 @@ class ProfilesController < ApplicationController
     flash[:notice] = "ユーザーアカウントを削除しました"
     redirect_to("/")
   end
-
+  
 
  private
  

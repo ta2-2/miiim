@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   
+  
   root 'home#index'
   
   get 'posts/index' => "posts#index"
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get "posts/:id" => "posts#show"
   
   get "users/:id" => "users#show"
+ 
 
   get 'share_users/new'
   
