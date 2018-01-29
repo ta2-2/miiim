@@ -1,0 +1,15 @@
+<h2>プロフィール編集</h2>
+
+<% if @profile.image_name %>
+  <img src = "<%="/user_images/#{@profile.image_name}" %>">
+    <% else %>
+      <img src= "/user_images/default.jpg" >
+<% end %>
+
+<%= form_tag("/imgs/#{@profile.id}/update", {multipart: true}) do %>
+<p>画像</p>
+<input name="image" type="file"><br>
+<input type="submit" value="画像更新">
+<% end %>
+
+<%= render 'form', profile: @profile %>
