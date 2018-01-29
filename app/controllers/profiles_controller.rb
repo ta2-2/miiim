@@ -24,15 +24,16 @@ class ProfilesController < ApplicationController
   end
   
   def update
+  
+  @profile = Profile.find_by(id: params[:id])
     
-    @profile = Profile.find_by(id: params[:id])
-      if @profile.update(profile_params)
+    if @profile.update(profile_params)
  
         flash[:notice] = "ユーザー情報を編集しました"
         redirect_to("/users/#{@profile.id}")
       else
         render("profiles/#{@profile.id}/edit")
-      end
+    end
   end
   
   def destroy
@@ -46,7 +47,7 @@ class ProfilesController < ApplicationController
  private
  
  def profile_params
-   params.require(:profile).permit(:content, :image_name, :area, :gender, :interests, :level, :birth_date, :job)
+   params.require(:profile).permit(:content,:area, :gender, :image_name, :interests, :birth_date, :job)
  end
  
 
