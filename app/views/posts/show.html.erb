@@ -1,4 +1,10 @@
 <h1>投稿した内容</h1>
 
-<%= @post.content %>
-<%= @post.created_at %>
+<%= @post.content %><br>
+<%= @post.created_at %><br><br><br>
+
+<ul>
+  <li>
+    <%= link_to("拡散シェア", "/posts/#{@post.id}/new_tweet") %>
+  </li>
+</ul>

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
   get "posts/:id" => "posts#show"
+  get "posts/:id/new_tweet" => "posts#new_tweet"
+  get "posts/:id/create_tweet" => "posts#create_tweet"
   
   get "users/:id" => "users#show"
  

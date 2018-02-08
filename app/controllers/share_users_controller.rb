@@ -1,4 +1,6 @@
 class ShareUsersController < ApplicationController
+  before_action :authenticate_user!
+  
   def new
     @share_user = ShareUser.find_or_create_from_auth(request.env['omniauth.auth'])
     @u_id = ShareUser.find_by(user_id: current_user.id)
