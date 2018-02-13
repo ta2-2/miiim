@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   post "imgs/:id/destroy" => "imgs#destroy"
   resources :profiles
 
+  get "auth/:provider/callback" => "share_users#new"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
