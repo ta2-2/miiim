@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
   get "posts/:id" => "posts#show"
+  get "posts/:id/new_tweet" => "posts#new_tweet"
+  get "posts/:id/create_tweet" => "posts#create_tweet"
   
   get "users/:id" => "users#show"
  
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
   post "imgs/:id/destroy" => "imgs#destroy"
   resources :profiles
 
+  get "auth/:provider/callback" => "share_users#new"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

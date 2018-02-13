@@ -17,7 +17,7 @@ class ImgsController < ApplicationController
       flash[:notice] = "画像を更新しました"
       redirect_to("/profiles/#{@profile_img.id}/edit")
     else
-      redirest_to("/profiles/#{@profile_img.id}/edit")
+      redirect_to("/profiles/#{@profile_img.id}/edit")
     end
     end
   end
