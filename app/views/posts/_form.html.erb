@@ -1,0 +1,53 @@
+
+    <%= form_for ([@post]) do  |f|%>
+      <div class="form">
+        <div class="form-body">
+          <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          
+          <%= f.select :category,
+          ["テクノロジー",
+          "モバイル",
+          "アプリ",
+          "エンタメ",
+          "ビューティー",
+          "ファッション",
+          "ライフスタイル",
+          "ビジネス",
+          "ウェブ",
+          "グルメ",
+          "イベント"],
+          { include_blank:"選択してください"} %>
+           
+          
+          <div style="editorwrapper">
+            <div class="editor">
+                <p class="p_Editor">Editor</p>
+                
+                    <p>ページタイトル</p>
+                    <%= f.text_field :title, id: "liveeditor-title" %><br>
+
+                    <p>ページの内容</p>
+                    <%= f.text_field :content, id: "liveeditor" %><br>
+
+            </div>
+
+            <div class="preview">
+              
+                <p class="p_preview">Preview</p>
+                <div id="livepreview-title"></div>
+                <div id="livepreview"></div>
+            </div>
+
+            <div class="clear"></div>
+          <%= f.submit("投稿", name: :content_submit , class: "content_submit") %>
+          <%= f.submit("保存", name: :save_submit , class: "content_submit") %>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

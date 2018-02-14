@@ -1,10 +1,38 @@
 <h1>投稿した内容</h1>
 
+
 <%= @post.content %><br>
 <%= @post.created_at %><br><br><br>
+
 
 <ul>
   <li>
     <%= link_to("拡散シェア", "/posts/#{@post.id}/new_tweet") %>
   </li>
 </ul>
+
+
+
+<% if @post.post_on == true %>
+
+<div class="openContent-attention">
+    <p class="privatContent">公開中の投稿</p>
+</div>    
+
+<% else %>
+<div class="privateContent-attention">
+    <p class="privateContent">非公開設定中の投稿</p>
+</div>
+
+<% end %>
+
+<div class="openContent-box">
+<%= @post.category %><br>
+<h2><%= @post.title %><br></h2>
+<p><%= @post.content %></p>
+<%= @post.created_at %><br>
+<%= link_to("編集","/posts/#{@post.id}/edit") %>
+<%= link_to("削除","/posts/#{@post.id}/destroy",{method: "post"}) %>
+</div>
+
+

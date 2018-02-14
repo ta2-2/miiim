@@ -1,5 +1,6 @@
 <h2>投稿一覧</h2>
 
+
 <h3>【最新の投稿】</h3>
 
 <div class="main posts-index">
@@ -8,7 +9,10 @@
     <% @posts.each do |post| %>
     <% if post.post_on == true%>
       <div class="posts-index-item">
-          <%= link_to(post.content, "/posts/#{post.id}") %>
+          <%= link_to(post.title, "/posts/#{post.id}") %><br>
+          <%= post.content%><br>
+          
+          </div>
       <% end %>
 <%
 =begin
@@ -26,7 +30,7 @@
         <%
 =end
 %>
-      </div>
+      
     <% end %>
   </div>
 </div>

@@ -16,11 +16,13 @@ Rails.application.routes.draw do
   get "posts/:id" => "posts#show"
   get "posts/:id/new_tweet" => "posts#new_tweet"
   get "posts/:id/create_tweet" => "posts#create_tweet"
-  
   get "users/:id" => "users#show"
- 
-
   get 'share_users/new'
+
+  
+  root 'home#index'
+  resources :posts
+
   
   post "imgs/:id/update" => "imgs#update"
   post "imgs/:id/destroy" => "imgs#destroy"
