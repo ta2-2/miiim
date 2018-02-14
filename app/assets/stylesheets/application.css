@@ -477,3 +477,27 @@ TimeLine
 .clear{
     clear:both;
 }
+
+.privateContent-attention{
+  width:100%;
+  padding:10px 40px;
+  margin: -28px 0 20px 0;
+  background-color:#cce1ff;
+}
+.privateContent{
+  font-weight:800;
+  font-size:17px;
+}
+
+.openContent-attention{
+  width:100%;
+  padding:10px 40px;
+  margin: -28px 0 20px 0;
+  background-color:#ff9966;
+}
+
+
+.privateContent-box{
+  width:95%;
+  padding: 40px 20px;
+}
