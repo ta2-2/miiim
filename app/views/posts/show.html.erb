@@ -1,6 +1,18 @@
 <h1>投稿した内容</h1>
 
 
+<%= @post.content %><br>
+<%= @post.created_at %><br><br><br>
+
+
+<ul>
+  <li>
+    <%= link_to("拡散シェア", "/posts/#{@post.id}/new_tweet") %>
+  </li>
+</ul>
+
+
+
 <% if @post.post_on == true %>
 
 <div class="openContent-attention">
@@ -23,6 +35,8 @@
 current_user.id :<%= current_user.id %><br>
 @post.post_on :<%= @post.post_on %><br>
 
+
 <%= link_to("編集","/posts/#{@post.id}/edit") %>
 <%= link_to "削除", post_path(@post.id), method: :delete %>
 </div>
+

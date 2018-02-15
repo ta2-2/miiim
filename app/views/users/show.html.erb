@@ -1,11 +1,23 @@
 <h2>マイページ</h2>
-<p>（画像）編集 / 削除</p>
 
-<p>名前: <%= current_user.name %></p>
+<div class="main-mypage">
+  <div class="align-left">
+    <img src= "/user_images/default.jpg" >
+    <%= link_to "編集", "/profiles/#{@user.id}/edit" %> / <%= link_to "削除", "/profiles/#{@user.id}/destroy" %><br>
+<br>
+<p>名前: <%= current_user.name %></p><br>
+
 <p>プロフィール</p>
-<p>属性:</p>
+<%= @profile.content %><br>
+
+<br><p>性別:<%= @profile.gender %></p>
+<br>
+<p>興味関心:<%= @profile.interests %></p>
+<br>
 <p>WEBサイト:</p>
 
+<p>レベル:<%= @profile.level %></p>
+<br>
 <p>デポジット残高</p>
 <p>応援チャージしたコンテンツ一覧</p>
 <p>投稿したコンテンツ一覧</p>
@@ -34,6 +46,15 @@
 <p>拡散したコンテンツ一覧</p>
 
 
-<p>プロフィールを編集ボタン</p>
-<%= link_to 'アドレス・パスワード変更', edit_user_registration_path %><br>
-<%= link_to 'Twitter認証', '/auth/twitter' %>
+        <div class="buttom-container">
+            <%= link_to "プロフィールを作成", "/profiles/new" %><br>
+            <%= link_to "プロフィールを編集", "/profiles/#{@user.id}/edit" %><br>
+            <%= link_to 'アドレス・パスワード変更', edit_user_registration_path %><br>
+            <%= link_to 'Twitter認証', '/auth/twitter' %>
+        </div>
+        
+  </div>
+</div>
+
+
+

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
 before_action :ensure_current_user, {only:[:edit ,:destroy]}  
 
 
@@ -8,7 +9,12 @@ before_action :ensure_current_user, {only:[:edit ,:destroy]}
     
     #user.rbファイルでpostsアクション指定
     @posts = @user.post
+     @profile = Profile.find_by(id: params[:id])
+    
+    if !@profile
+      redirect_to("/profiles/new")
+    end
+
   end
-  
 
 end

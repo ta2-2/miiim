@@ -1,0 +1,10 @@
+<h1>シェア作成ページ</h1>
+
+<%= form_tag("/posts/#{@post.id}/create_tweet") do %>
+  <div class="form">
+    <div class="form-body">
+      <textarea name="content" class="textarea-content" ><%= @url %></textarea>
+      <input type="submit" value="Tweet">
+    </div>
+  </div>
+<% end %>

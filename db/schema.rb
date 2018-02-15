@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124105202) do
+
+ActiveRecord::Schema.define(version: 20180207071213) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -20,6 +21,19 @@ ActiveRecord::Schema.define(version: 20180124105202) do
     t.text     "title"
     t.text     "category"
     t.boolean  "post_on",    default: false, null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.text     "content"
+    t.string   "image_name"
+    t.string   "area"
+    t.integer  "gender",     default: 0
+    t.string   "interests",  default: "0"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "level",      default: 0
+    t.date     "birth_date"
+    t.string   "job"
   end
 
   create_table "share_users", force: :cascade do |t|
@@ -33,6 +47,35 @@ ActiveRecord::Schema.define(version: 20180124105202) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+end
+
+ActiveRecord::Schema.define(version: 20180124105202) do
+
+
+  create_table "tweets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.text     "content"
+    t.string   "parameter"
+    t.integer  "click",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+
+  create_table "share_users", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "nickname"
+    t.string   "image_url"
+    t.integer  "user_id"
+    t.string   "token"
+    t.string   "secret"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
