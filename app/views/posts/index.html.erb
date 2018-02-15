@@ -11,6 +11,7 @@
       <div class="posts-index-item">
           <%= link_to(post.title, "/posts/#{post.id}") %><br>
           <%= post.content%><br>
+          <%= post.user_id %>
           
           </div>
       <% end %>

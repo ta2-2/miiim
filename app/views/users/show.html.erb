@@ -9,6 +9,28 @@
 <p>デポジット残高</p>
 <p>応援チャージしたコンテンツ一覧</p>
 <p>投稿したコンテンツ一覧</p>
+ <% @posts.each do |post| %>
+    <% if post.post_on == true%>
+      <div class="posts-index-item">
+          <%= link_to(post.title, "/posts/#{post.id}") %><br>
+          <%= post.content%><br>
+          <%= current_user.email %>
+          <%= current_user.id %>
+          </div>
+      <% end %>
+<% end %>
+<p>保存中のコンテンツ一覧</p>
+ <% @posts.each do |post| %>
+    <% if post.post_on == false%>
+      <div class="posts-index-item">
+          <%= link_to(post.title, "/posts/#{post.id}") %><br>
+          <%= post.content%><br>
+          <%= post.user_id %>
+
+          </div>
+      <% end %>
+<% end %>
+
 <p>拡散したコンテンツ一覧</p>
 
 

@@ -7,6 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
          
-  
+  def post
+    return Post.where(user_id: self.id)
+  end
   
 end

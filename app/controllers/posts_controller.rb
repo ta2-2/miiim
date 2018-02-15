@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
  
+before_action :ensure_current_user, {only:[:edit ,:destroy]}  
+
   def index
       @posts = Post.all.order(created_at: :desc)
   end
@@ -11,16 +13,17 @@ class PostsController < ApplicationController
   def create
       #保存ボタン押した時の動き
 
-      @post = Post.new(post_params,
-      user_id: @current_user.id)
+      @post = Post.new(post_params)
         if params[:content_submit] 
           @post.post_on = true
+          @post.user_id = current_user.id
           @post.save
           flash[:notice] = "投稿しました"
         redirect_to(posts_path)
         
         else
         @post.post_on = false
+        @post.user_id = current_user.id
         @post.save
         flash[:notice] = "投稿を保存しました"
           
@@ -28,12 +31,12 @@ class PostsController < ApplicationController
 
           
         end
-    
   end
   
   
   def show
       @post = Post.find_by(id: params[:id] )
+
   end
   
   def edit
@@ -64,17 +67,27 @@ class PostsController < ApplicationController
     
   end
   
-  
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
-    flash[:notice]
-    redirect_to("/posts/index")
+    flash[:notice] = "投稿を削除しました"
+    redirect_to(posts_path)
+
   end
   
-  
+ # 編集権限があるかどうかを見極めるための記述
+  def ensure_current_user
+      @post = Post.find_by(id: params[:id] )
+         if  current_user.id != @post.user_id
+           flash[:notice] = "権限がありません"
+             return_back and return
+
+         end
+  end
   
 end
+
+
 
 private
 

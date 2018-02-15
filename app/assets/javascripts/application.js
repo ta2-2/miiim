@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 //= require froala_editor.min.js
 //= require plugins/align.min.js
 //= require plugins/colors.min.js
@@ -26,3 +25,7 @@
 //= require plugins/url.min.js
 //= require plugins/video.min.js
 //= require languages/ja.js
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree 

@@ -12,7 +12,12 @@
           <!-- deviseで使われるヘルパーメソッドでuser_signed_in?はログインしているかどうか -->
         <% if user_signed_in? %>
         <li>      
-                <strong><%= link_to current_user.name, "/users/#{current_user.id}" %></strong>
+            <strong><%= link_to current_user.name, "/users/#{current_user.id}" %></strong>
+        </li>
+        <li>
+            <% if current_user %>
+            <%= current_user.id %>
+            <% end %>
         </li>
         <li>        
                 <%= button_to 'ログアウト', destroy_user_session_path , method: :delete,:class => "logout" %>
